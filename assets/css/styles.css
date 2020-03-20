@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-size: 15px;
+}
+
+table {
+  margin: auto;
+  width: 75%;
+  margin-bottom: 25px;
+}
+
+tr {
+  background: #5b86a3;
+}
+
+tr:nth-child(2n){
+  color: white;
+  background: #104161;
+}
+
+td {
+  padding: 10px;
+}
+
+th {
+  background: #1a76b3;
+  padding: 10px;
+}

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de Curriculum</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <h1 class="title">Curriculum vitae</h1>
+    <span class="subtitle">Registro de datos</span>
+    <br />
+    <br />
+    <form action="#" name="myForm" method="post" id="formData">
+      <table>
+        <tr align="left">
+          <th colspan="2">
+            1.-) Personal data
+          </th>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="formName">Firts Name</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="firstName"
+              id="formName"
+              placeholder="Your First Name"
+              required
+              title="Your First Name"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Enter your first name</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="formSecondName">Second Name</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="secondName"
+              id="formSecondName"
+              placeholder="Your Second Name"
+              required
+              title="Your Second Name"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Enter your Second name</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="lastFirstName">Last Firts Name</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="lastFirstName"
+              id="lastFirstName"
+              placeholder="Your Last First Name"
+              required
+              title="Your Last First Name"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Enter your last first name</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="lastSecondName">Last Second Name</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="lastSecondName"
+              id="lastSecondName"
+              placeholder="Your Last Second Name"
+              required
+              title="Your Last Second Name"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Enter your Last Second name</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right"><label for="DNI">DNI</label></td>
+          <td>
+            <select name="nationality" id="nationality" title="nationality">
+              <option value="V" title="VENEZOLANO">V-</option>
+              <option value="E" title="Extrangero">E-</option>
+              <option value="J" title="Jurídico">J-</option>
+              <option value="G" title="Gubernamental">G-</option>
+            </select>
+            <input
+              type="number"
+              required
+              name="dni"
+              id="DNI"
+              title="Enter your DNI"
+              placeholder="Cedula"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="birthDate">Date of Birth</label>
+          </td>
+          <td>
+            <input
+              type="date"
+              required
+              name="birthDate"
+              id="birdDate"
+              title="Date of Birth"
+              max="2019-02-15"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="numberForm">Phone Number</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              required
+              name="number"
+              id="numberForm"
+              title="Your Phone Number"
+              placeholder="Phone Number"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="emailForm">Email</label>
+          </td>
+          <td>
+            <input
+              type="email"
+              required
+              name="emailForm"
+              id="emailForm"
+              placeholder="Your Email"
+              title="Your Email"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            State civil
+          </td>
+          <td>
+            <label for="stateCivilCasado">Married</label>
+            <input
+              type="radio"
+              checked
+              name="state"
+              id="stateCivilCasado"
+              value="casado"
+            />
+
+            <label for="stateCivilSoltero">Alone</label>
+            <input
+              type="radio"
+              name="state"
+              id="stateCivilSoltero"
+              value="soltero"
+            />
+
+            <label for="stateCivilViudo">Widower</label>
+            <input
+              type="radio"
+              name="state"
+              id="stateCivilViudo"
+              value="viudo"
+            />
+
+            <label for="stateCivilDivorciado">Divorced</label>
+            <input
+              type="radio"
+              name="state"
+              id="stateCivilDivorciado"
+              value="divorciado"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <label for="directionForm">Direction</label>
+          </td>
+          <td>
+            <textarea
+              name="direction"
+              id="directionForm"
+              placeholder="Direction"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </td>
+        </tr>
+        <tr align="left">
+          <th colspan="2">
+            2.-) Cursos
+          </th>
+        </tr>
+        <tr class="exp-curso id1">
+          <td align="right">
+            <label for="curso">Curso</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="cursos[]"
+              placeholder="Curso"
+              required
+              title="Curso"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Ingrese el nombre del curso</span>
+            <button class="delCur" data-cursoid="999">Quitar curso</button>
+          </td>
+        </tr>
+        <tr class="inst-curso id1">
+          <td align="right">
+            <label for="instituto">Instituto del curso</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="cursoInstituto[]"
+              placeholder="Instituto"
+              required
+              title="Instituto"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Ingrese el instituto donde obtuvo el título</span>
+          </td>
+        </tr>
+        <tr class="hora-curso id1">
+          <td align="right">
+            <label for="hora">Horas del curso</label>
+          </td>
+          <td>
+            <input
+              type="number"
+              name="cursoHoras[]"
+              placeholder="Horas"
+              required
+              title="Horas"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Ingrese la duración en horas del curso</span>
+          </td>
+        </tr>
+        <tr id="buttonAdd">
+          <td colspan="2">
+            <button id="addCur">Agregar un nuevo curso</button>
+          </td>
+        </tr>
+        <tr align="left">
+          <th colspan="2">
+            2.-) Experiencias
+          </th>
+        </tr>
+        <tr class="empresa-exp idE1">
+          <td align="right">
+            <label>Empresa</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="expEmpre[]"
+              placeholder="Empresa"
+              required
+              title="Empresa"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Nombre de la empresa</span>
+            <button class="delExp" data-expid="999">Quitar expeciencia</button>
+          </td>
+        </tr>
+        <tr class="cargo-exp idE1">
+          <td align="right">
+            <label>Cargo</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="expCargo[]"
+              placeholder="Cargo"
+              required
+              title="Cargo"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Nombre del Cargo</span>
+          </td>
+        </tr>
+        <tr class="hora-exp idE1">
+          <td align="right">
+            <label>Duración</label>
+          </td>
+          <td>
+            <input
+              type="number"
+              name="expTime[]"
+              placeholder="Horas"
+              required
+              title="Horas"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Tiempo de trabajo (en horas)</span>
+          </td>
+        </tr>
+        <tr id="buttonAddE">
+          <td colspan="2">
+            <button id="addExp">Agregar una nueva experiencia</button>
+          </td>
+        </tr>
+        <tr align="left">
+          <th colspan="2">
+            2.-) Referencias
+          </th>
+        </tr>
+        <tr class="nombre-ref idR1">
+          <td align="right">
+            <label>Name</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="refName[]"
+              placeholder="Nombre"
+              required
+              title="Nombre"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Nombre de la persona</span>
+            <button class="delRef" data-refid="999">Quitar referencia</button>
+          </td>
+        </tr>
+        <tr class="telf-ref idR1">
+          <td align="right">
+            <label>Phone</label>
+          </td>
+          <td>
+            <input
+              type="number"
+              name="refPhone[]"
+              placeholder="Phone"
+              required
+              title="Phone"
+              size="50"
+            />
+            <br />
+            <span class="miniText">Teléfono de la persona</span>
+          </td>
+        </tr>
+        <tr id="buttonAddR">
+          <td colspan="2">
+            <button id="addRef">Agregar una nueva referencia</button>
+          </td>
+        </tr>
+        <tr id="submit">
+          <td colspan="2">
+            <button id="buttonOK">Enviar</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</html>
