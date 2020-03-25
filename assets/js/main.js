@@ -105,9 +105,6 @@ $(document).ready(function() {
 
   //Submit
   $("#buttonOK").on("click", function(e) {
-    e.preventDefault();
-    var formulario = document.getElementById("formData");
-    var formDataInputs = $(formulario).serialize();
-    console.log(formDataInputs);
+    console.log("Enviando");
   });
 });
