@@ -13,7 +13,7 @@ $sql="INSERT INTO datos_personales VALUES(NULL, '$firstName', '$lastFirstName', 
 $result=mysqli_query($con,$sql);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
