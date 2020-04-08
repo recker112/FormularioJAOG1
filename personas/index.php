@@ -18,6 +18,7 @@ $data=unserialize($data);
 <body>
   <table align="center">
     <a href="../index.php">Inicio</a>
+    <center><a href="PersonasControlador.php?operacion=registrar">Registrar</a></center>
       <tr>
         <th>Nro</th>
         <th>Nombres</th>

@@ -18,16 +18,16 @@ class PersonasControlador
         $persona->index();
         break;
       case 'registrar':
-        // $persona->registrar();
+        $persona->registrar();
         break;
       case 'guardar':
-        // $persona->guardar();
+        $persona->guardar();
         break;
       case 'modificar':
-        // $persona->modificar();
+        $persona->modificar();
         break;
       case 'actualizar':
-        // $persona->actualizar();
+        $persona->actualizar();
         break;
       case 'eliminar':
           // $persona->eliminar();
@@ -71,6 +71,71 @@ class PersonasControlador
 
     mysqli_close($conex);
     header("Location: index.php?filas=".$filas."&campos=".$campos."&data=".serialize($datos));
+  }
+
+  //Modificar
+  public function modificar()
+  {
+    extract($_REQUEST);
+    $db=new classDB();
+    $conex=$db->conectar();
+
+    //Query
+    $sql="SELECT * FROM datos_personales WHERE id=".$id_persona;
+    //Realizar query
+    $res=mysqli_query($conex,$sql);
+    //Obtener datos
+    $data=mysqli_fetch_array($res);
+
+    header("Location: editar.php?data=".serialize($data));
+  }
+
+  //Actualizar
+  public function actualizar()
+  {
+    extract($_REQUEST);
+    $db=new classDB();
+    $conex=$db->conectar();
+
+    $sql="SELECT * FROM datos_personales WHERE cedula='$cedula' AND id='$id_persona'";
+
+    $res=mysqli_query($conex,$sql);
+    $cant=mysqli_num_rows($res);
+
+    if ($cant>0){
+      ?>
+      <script type="text/javascript">
+        alert("CÉDULA YA REGISTADA");
+        window.location="PersonasControlador.php?operacion=index";
+      </script>
+      <?php
+    }else {
+       //Query
+      $sql="UPDATE datos_personales set 
+      nombres='$nombres', 
+      apellidos='$apellidos', 
+      cedula='$cedula'
+      WHERE id=$id_persona";
+
+      //Realizar query
+      $res=mysqli_query($conex,$sql);
+
+      if($res){
+        ?>
+        <script type="text/javascript">
+          alert("REGISTRO MODIFICADO");
+          window.location="PersonasControlador.php?operacion=index";
+        </script>
+        <?php
+      }else {
+        ?>
+        <script type="text/javascript">
+          alert("ERROR AL MODIFICAR EL REGISTRO");
+          window.location="PersonasControlador.php?operacion=index";
+        </script>
+        <?php
+      }
+    }
   }
 }
 
