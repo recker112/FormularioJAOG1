@@ -30,7 +30,7 @@ class PersonasControlador
         $persona->actualizar();
         break;
       case 'eliminar':
-          // $persona->eliminar();
+          $persona->eliminar();
           break;
       default:
         ?>
@@ -135,6 +135,33 @@ class PersonasControlador
         </script>
         <?php
       }
+    }
+  }
+
+  //Eliminar
+  public function eliminar()
+  {
+    extract($_REQUEST);
+    $db=new classDB();
+    $conex=$db->conectar();
+
+    $sql="DELETE FROM datos_personales WHERE id='$id_persona'";
+    $res=mysqli_query($conex,$sql);
+
+    if($res) {
+      ?>
+      <script type="text/javascript">
+        alert("Registro eliminado");
+        window.location="PersonasControlador.php?operacion=index";
+      </script>
+      <?php
+    }else {
+      ?>
+      <script type="text/javascript">
+        alert("Registro no eliminado");
+        window.location="PersonasControlador.php?operacion=index";
+      </script>
+      <?php
     }
   }
 }
