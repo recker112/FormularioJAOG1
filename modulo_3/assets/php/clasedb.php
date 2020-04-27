@@ -5,7 +5,7 @@ class classDB
   
   public function conectar()
   {
-    $this->db = new mysqli('localhost', 'root', '', 'utiles_escolares') or die 
+    $this->db = new mysqli('localhost', 'root', '', 'programacion') or die 
     ('No conectado');
 
     return $this->db;
