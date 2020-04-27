@@ -1,0 +1,122 @@
+/*
+PALETA DE COLORES
+primary: #FF613F
+secondary: #613FFF
+background: #0F0F0F;
+paper: #232323;
+header: #;
+*/
+
+@import 'reset.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+/* Change color line */
+.input-field input[type=text]:focus {
+	border-bottom: 1px solid #FF613F !important;
+	box-shadow: 0 1px 0 0 #FF613F !important;
+}
+
+.input-field textarea:focus {
+	border-bottom: 1px solid #FF613F !important;
+	box-shadow: 0 1px 0 0 #FF613F !important;
+}
+
+/* Change color label */
+.input-field input[type=text]:focus + label {
+	color: #FF613F !important;
+}
+
+.input-field textarea:focus + label {
+	color: #FF613F !important;
+}
+
+/*Fix materialize*/
+.dropdown-content li>span {
+	color: #FF613F;
+}
+
+* {
+	color: white;
+}
+
+body {
+	font-family: Roboto;
+	background: #0F0F0F;
+}
+
+.header {
+	margin-bottom: 30px;
+}
+
+.header__nav {
+	padding: 0px 40px;
+	background: #2C2C2C !important;
+}
+
+.header__link:hover {
+	background: rgb(255,97,63,0.5); !important;
+}
+
+.paper {
+	background: #232323;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 10px;
+}
+
+.paper__title {
+	font-size: 25px;
+	display: block;
+	text-align: center;
+	margin: 20px;
+}
+
+.container {
+	max-width: 1000px;
+	margin: auto;
+}
+
+.button {
+	background: #FF613F;
+}
+
+.info {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.info__register {
+	opacity: 0.6;
+	font-style: italic;
+}
+
+.statusBox {
+	display: flex;
+	margin: 10px;
+	justify-content: center;
+}
+
+.statusBox__message {
+	padding: 10px;
+	background: red;
+	min-width: 500px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.statusBox__close {
+	cursor: pointer;
+}
+
+.error {
+	background: #e53935;
+}
+
+.success {
+	background: #00897b;
+}
+
+thead {
+	font-weight: 900;
+}
