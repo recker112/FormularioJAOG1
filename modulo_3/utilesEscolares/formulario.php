@@ -20,6 +20,7 @@ extract($_REQUEST);
 		<nav class="header__nav">
 	    <div class="nav-wrapper">
 	      <span class="brand-logo">Útiles Escolares</span>
+	      <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
 	        <li>
 	        	<a class="header__link" href="./controlador.php?operacion=index">Regresar</a>
@@ -27,6 +28,10 @@ extract($_REQUEST);
 	      </ul>
 	    </div>
 		</nav>
+
+		<ul class="sidenav" id="mobile-menu">
+	    <li><a class="header__link" href="./controlador.php?operacion=index">Regresar</a></li>
+	  </ul>
 	</header>
 	<main>
 		<div class="container paper">

@@ -5,6 +5,11 @@ function eliminar(id) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
+});
+
 //Ini select
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');

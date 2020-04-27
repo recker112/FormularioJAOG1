@@ -31,6 +31,11 @@ header: #;
 	color: #FF613F !important;
 }
 
+/* FIX SIDEBAR */
+.sidenav {
+	background: #2C2C2C;
+}
+
 /*Fix materialize*/
 .dropdown-content li>span {
 	color: #FF613F;
@@ -54,8 +59,12 @@ body {
 	background: #2C2C2C !important;
 }
 
+.header__link {
+	color: white !important;
+}
+
 .header__link:hover {
-	background: rgb(255,97,63,0.5); !important;
+	background: rgb(255,97,63,0.5) !important;
 }
 
 .paper {
