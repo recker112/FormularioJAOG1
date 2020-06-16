@@ -1,0 +1,141 @@
+<?php
+/**
+ * Public
+ */
+class UtilesEscolares
+{
+	public function MakeUtiles()
+	{
+		echo 'Útiles Construidos'
+	}
+}
+
+$utiles = new UtilesEscolares();
+$utiles->MakeUtiles(); //Construye los Útiles
+
+
+/**
+ * Private
+ */
+class UtilesEscolares
+{
+	private $totalUtilesRegistrados = 432;
+	public function MakeUtiles()
+	{
+		echo 'Útiles Construidos'
+	}
+
+	public function SeeTotalUtiles()
+	{
+		return $this->totalUtilesRegistrados;
+	}
+}
+
+$utiles = new UtilesEscolares();
+$utiles->SeeTotalUtiles();//Muestra todos los útiles registrados
+
+/**
+ * Protect
+ */
+class UtilesEscolares
+{
+	private $totalUtilesRegistrados = 432;
+
+	public function MakeUtiles()
+	{
+		echo 'Útiles Construidos'
+	}
+
+	public function SeeTotalUtiles()
+	{
+		return $this->totalUtilesRegistrados;
+	}
+}
+
+class Borradores extends UtilesEscolares
+{
+	public function MakeBorradores()
+	{
+		return $this->MakeUtiles();
+	}
+}
+
+$borradores = new Borradores();
+$borradores->MakeBorradores();//Construye los borradores
+
+/**
+ * Final
+ */
+class UtilesEscolares
+{
+	private $totalUtilesRegistrados = 432;
+
+	final public function MakeUtiles()
+	{
+		echo 'Útiles Construidos'
+	}
+
+	public function SeeTotalUtiles()
+	{
+		return $this->totalUtilesRegistrados;
+	}
+}
+
+class Borradores extends UtilesEscolares
+{
+	public function MakeUtiles()
+	{
+		echo "Borradores construidos";
+	}
+}
+
+$borradores= new Borradores();
+$borradores->MakeUtiles();//Error debido a que MakeUtiles no se puede reescribir
+
+/**
+ * Abstract
+ */
+abstract class UtilesAbs
+{
+	public $nombre;
+	public $marca;
+
+	public function SetName($name)
+	{
+		$this->nombre = $name;
+	}
+
+	public function SetMarca($marca)
+	{
+		$this->marca = $marca;
+	}
+}
+
+class Lapices extends UtilesAbs
+{
+	public $precio;
+
+	public function setPrecio($precio)
+	{
+		$this->precio = $precio;
+	}
+
+	public function SeeInfo()
+	{
+		$nombre = $this->nombre;
+		$marca = $this->marca;
+		$dinero = $this->precio;
+
+		echo "**Lapices**":
+		echo "Nombre del lápiz: $nombre </br>";
+		echo "Marca: $marca </br>";
+		echo "Precio: $".$dinero."</br>";
+	}
+}
+
+$lapiz = new Lapices();
+$lapiz->SetName('Lápiz TriColor');
+$lapiz->SetMarca('Caracol');
+$lapiz->setPrecio(40);
+$lapiz->SeeInfo();
+?>
