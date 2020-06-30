@@ -1,0 +1,32 @@
+<?php
+public function modificar()//Inicialización de una función publica llamada "modificar"
+{
+	//Extracción de los datos mandados en la consulta hacia la url
+	extract($_REQUEST);
+
+	//Instancia de la clase la cual maneja las conexiones hacia la 
+	//base de datos.
+	$db=new clasedb();
+	//Realizar una conexion hacia la base de datos y guardar el resultado en
+	//una variable
+	$conex=$db->conectar();
+
+
+	//Estructura de la consulta a realizar en la base de datos para obtener
+	//el usuario en el servidor.
+	$sql="SELECT * FROM datos_personales WHERE id=".$id_persona."";
+	//Uso de la función "mysqli_query" para poder ejecutar una consulta en el
+	//servidor, guardando el resultado en una variable.
+	$res=mysqli_query($conex,$sql);
+
+	//Uso de la función "mysqli_fetch_array" para poder extraer todos los datos
+	//obtenidos de la consulta y regresarlos con formato de array.
+	//Guardamos este resultado en una variable para poder usar estos datos.
+	$data=mysqli_fetch_array($res);
+
+	//Uso de la función "header" para poder redireccionar al usuario a otra parte
+	//del programa, pasandole los datos obtenidos de la consulta serializados, permitiendo que
+	//se puedan transferir por el método Get.
+	header("Location: editar.php?data=".serialize($data));
+}
+?>
